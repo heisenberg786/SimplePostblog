@@ -1,0 +1,21 @@
+ .jumbotron{
+  text-align: center;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid black;
+
+}
+#post{
+  text-align: center;
+
+}
+.navibar{
+  background-color: black;
+}
+h2{
+  margin: auto;
+  color: rgb(4, 1, 133);
+}
+h1{
+  color: rgb(4, 1, 133);
+}

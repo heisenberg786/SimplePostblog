@@ -1,0 +1,64 @@
+{% extends 'basic_app/base.html' %}
+{% load static %}
+{% block body_block %}
+<div class="jumbotron">
+  {% if registered %}
+
+    <h1>Thank You for registering!</h1>
+    {% for message in messages %}
+      <p>{{message}}</p>
+    {% endfor %}
+
+  {% else %}
+    <div class="container">
+
+    </div>
+    <h1>Register here!</h1>
+    <h2>Fill out the form!</h2>
+    <br>
+    <form enctype="multipart/form-data" method="post">
+      {% csrf_token %}
+      {{user_form.first_name.label}}
+      {{user_form.first_name}}
+      <br>
+      <br>
+
+      {{user_form.last_name.label}}
+      {{user_form.last_name}}
+      <br>
+      <br>
+
+      {{user_form.email.label}}
+      {{user_form.email}}
+      <br>
+      <br>
+
+      {{user_form.username.label}}
+      {{user_form.username}}
+      <br>
+      <br>
+
+      {{user_form.password.label}}
+      {{user_form.password}}
+      <br>
+      <br>
+
+      <!-- {{user_form.as_p}} -->
+      {{profile_form.portfolio_site.label}}
+      {{profile_form.portfolio_site}}
+      <br>
+
+      {{profile_form.profile_pic.as_p}}
+      <br>
+
+
+<input class="btn btn-primary" type="submit" value="Submit">
+<br>
+<br>
+
+  <a id="login" href="{% url 'basic_app:user_login' %}">Already Have an Account?Click Here!! </a>
+    </form>
+  {% endif %}
+  </div>
+
+{% endblock %}

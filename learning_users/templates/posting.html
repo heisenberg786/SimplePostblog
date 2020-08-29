@@ -1,0 +1,29 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+<div class="container">
+<div class="jumbotron">
+
+
+
+
+
+
+
+<div id="post">
+
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      {% for posting in post%}
+        <h1 class="card-title">  {{posting.author}} </h1>
+        <h2 class="card-subtitle mb-2 text-muted">{{posting.title}}</h2>
+        <p class="card-text">{{posting.content}}</p>
+        <p class="card-text">  {{posting.created_date}} </p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+{% endblock %}
